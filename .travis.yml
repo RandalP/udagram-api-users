@@ -15,10 +15,10 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udagram-feed .
-  - docker tag udagram-feed randalp/udagram-feed:latest
+  - docker build -t udagram-api-users .
+  - docker tag udagram-api-users randalp/udagram-api-users:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push randalp/udagram-feed
+  - docker push randalp/udagram-api-users
 
